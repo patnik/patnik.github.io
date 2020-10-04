@@ -2,44 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nikos Patias</title>
-    <link>/</link>
+    <link>https://patnik.github.io/</link>
     <description>Recent content on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://patnik.github.io/about/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
-      <description>Nikos Patias Visit the full-page app at Go to application</description>
+      <guid>https://patnik.github.io/about/</guid>
+      <description>Nikos Patias (put short description)</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://patnik.github.io/projects/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://patnik.github.io/projects/</guid>
+      <description>One of the recent projects is this map</description>
     </item>
     
     <item>
       <title>fff</title>
-      <link>/blog/fff/</link>
+      <link>https://patnik.github.io/blog/fff/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/fff/</guid>
+      <guid>https://patnik.github.io/blog/fff/</guid>
       <description></description>
     </item>
     
     <item>
       <title>interactive map</title>
-      <link>/blog/interactive-map/</link>
+      <link>https://patnik.github.io/blog/interactive-map/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/interactive-map/</guid>
+      <guid>https://patnik.github.io/blog/interactive-map/</guid>
       <description>Visit the full-page app at Go to application</description>
     </item>
     
     <item>
       <title>mapping</title>
-      <link>/blog/mapping/</link>
+      <link>https://patnik.github.io/blog/mapping/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/mapping/</guid>
+      <guid>https://patnik.github.io/blog/mapping/</guid>
       <description>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1## Reading layer `2011_grids_intersect_FUA&amp;#39; from data source `C:\Users\User\Desktop\OS_historic_data\layers\2011_grids_intersect_FUA.shp&amp;#39; using driver `ESRI Shapefile&amp;#39;## Simple feature collection with 12320 features and 13 fields## geometry type: POLYGON## dimension: XY## bbox: xmin: 219000 ymin: 44000 xmax: 655000 ymax: 868000## projected CRS: OSGB 1936 / British National Grid## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, union## ## Attaching package: &amp;#39;ggplot2&amp;#39;## The following objects are masked from &amp;#39;package:psych&amp;#39;:## ## %+%, alpha## ## Attaching package: &amp;#39;reshape2&amp;#39;## The following object is masked from &amp;#39;package:tidyr&amp;#39;:## ## smiths## Warning: `funs()` is deprecated as of dplyr 0.</description>
     </item>
     
