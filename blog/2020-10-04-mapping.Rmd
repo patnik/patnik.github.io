@@ -1,0 +1,108 @@
+---
+title: mapping
+author: Nikos Patias
+date: '2020-10-04'
+slug: mapping
+categories: []
+tags: []
+comments: no
+showcomments: yes
+showpagemeta: yes
+---
+
+
+```{r echo=FALSE}
+library(sf)
+
+# 1. Read in the FUA grids
+FUAs <- st_read("C:/Users/User/Desktop/OS_historic_data/layers/2011_grids_intersect_FUA.shp")
+
+# if we want we can subset the dataset only to the FUA that we are interested
+FUAs <- subset(FUAs, fuaname %in% c("London","Manchester",
+                                    "West Midlands urban area","Leeds",
+                                    "Glasgow","Liverpool",
+                                    "Southampton","Newcastle upon Tyne",
+                                    "Nottingham","Sheffield",
+                                    "Bristol","Edinburgh"))
+
+# use Birmingham as it is easier to report
+FUAs$fuaname[FUAs$fuaname == "West Midlands urban area"] <- "Birmingham"
+
+
+
+# the following function have been taken from SIMD
+# funtion for min-max standardisation -------------------------------------
+
+normalize <- function(x)
+{
+  return((x- mean(x)) /sd(x))
+}
+
+normalize2 <- function(x)
+{
+  return((x- min(x)) /(max(x)-min(x)))
+}
+
+replaceMissing <- function(v) replace(v, is.na(v), 0)
+
+expoTransform <- function(ranks) {
+  
+  prop_ranks <- ranks / max(ranks)
+  
+  expo <- -23 * log(1 - prop_ranks * (1 - exp( -100 / 23)))
+  
+  return(expo)
+}
+
+
+# we need these libraries for the composite index function
+library(dplyr)
+library(psych)
+library(tidyr) # this is used for drop_na()
+library(RColorBrewer)
+library(leaflet)
+library(leaflet.extras)
+# source to the function used in SIMD
+#source('/Users/nikospatias/Desktop/OS_historic_data/index_calc/openSIMD/openSIMD_analysis/scripts/utils/helpers.R')
+
+
+# source the functions for composite index function
+source('C:/Users/User/Desktop/OS_historic_data/index_calc/Composite_index_function.R')
+
+# source the functions for creating plots
+source('C:/Users/User/Desktop/OS_historic_data/index_calc/plot_functions.R')
+
+
+
+
+
+# function for creating decile plots by FUA --------------------------------
+# this function needs
+library(ggplot2)
+library(reshape2)
+
+
+# Read all the RDS files ------------------------
+
+data_2001 <- readRDS(file = "C:/Users/User/Desktop/OS_historic_data/grid_analysis/full_data_2001.Rds")
+data_2006 <- readRDS(file = "C:/Users/User/Desktop/OS_historic_data/grid_analysis/full_data_2006.Rds")
+data_2011 <- readRDS(file = "C:/Users/User/Desktop/OS_historic_data/grid_analysis/full_data_2011.Rds")
+data_2016 <- readRDS(file = "C:/Users/User/Desktop/OS_historic_data/grid_analysis/full_data_2016.Rds")
+
+# treat the dataset as dataframe
+st_geometry(data_2001) <- NULL
+st_geometry(data_2006) <- NULL
+st_geometry(data_2011) <- NULL
+st_geometry(data_2016) <- NULL
+
+
+CI_2001 <- Comp_ind(data_2001, FUAs, "2001")
+CI_2006 <- Comp_ind(data_2006, FUAs, "2006")
+CI_2011 <- Comp_ind(data_2011, FUAs, "2011")
+CI_2016 <- Comp_ind(data_2016, FUAs, "2016")
+
+
+CI_2001$Interactive_map
+```
+
+

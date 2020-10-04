@@ -3,48 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://patnik.github.io/blog/</loc>
+    <loc>/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/blog/fff/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/blog/interactive-map/</loc>
+    <loc>/categories/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/</loc>
+    <loc>/blog/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/tags/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>/blog/fff/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/categories/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>/blog/interactive-map/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/categories/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>/blog/mapping/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/tags/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
