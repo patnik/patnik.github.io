@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Nikos Patias</title>
-    <link>/blog/</link>
+    <link>https://patnik.github.io/blog/</link>
     <description>Recent content in Blogs on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fff</title>
-      <link>/blog/fff/</link>
+      <link>https://patnik.github.io/blog/fff/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/fff/</guid>
+      <guid>https://patnik.github.io/blog/fff/</guid>
       <description></description>
     </item>
     
     <item>
       <title>interactive map</title>
-      <link>/blog/interactive-map/</link>
+      <link>https://patnik.github.io/blog/interactive-map/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/interactive-map/</guid>
+      <guid>https://patnik.github.io/blog/interactive-map/</guid>
       <description>Visit the full-page app at Go to application</description>
     </item>
     

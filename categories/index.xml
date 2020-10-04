@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Nikos Patias</title>
-    <link>/categories/</link>
+    <link>https://patnik.github.io/categories/</link>
     <description>Recent content in Categories on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate><atom:link href="https://patnik.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
-      <link>/categories/about/</link>
+      <link>https://patnik.github.io/categories/about/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>/categories/about/</guid>
+      <guid>https://patnik.github.io/categories/about/</guid>
       <description></description>
     </item>
     
