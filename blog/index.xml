@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Nikos Patias</title>
-    <link>https://patnik.github.io/blog/</link>
+    <link>/blog/</link>
     <description>Recent content in Blogs on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>testing</title>
-      <link>https://patnik.github.io/blog/testing/</link>
+      <link>/blog/testing/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://patnik.github.io/blog/testing/</guid>
+      <guid>/blog/testing/</guid>
       <description></description>
     </item>
     
