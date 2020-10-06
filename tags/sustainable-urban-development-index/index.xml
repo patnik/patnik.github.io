@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sustainable Urban Development Index on Nikos Patias</title>
-    <link>/tags/sustainable-urban-development-index/</link>
+    <link>https://patnik.github.io/tags/sustainable-urban-development-index/</link>
     <description>Recent content in Sustainable Urban Development Index on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sustainable-urban-development-index/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/tags/sustainable-urban-development-index/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sustainable Urban Development Index</title>
-      <link>/sustainable-urban-development-index/</link>
+      <link>https://patnik.github.io/sustainable-urban-development-index/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/sustainable-urban-development-index/</guid>
+      <guid>https://patnik.github.io/sustainable-urban-development-index/</guid>
       <description>This page provides some interactive maps of my recent work on developing a Sustainable Urban Development Index for the 12 largest urban areas in Great Britain. The index has been developed at 1 km2 level.
 Using the following links you can access maps showing the ranking (split into deciles) of the Sustainable Urban Development Index and its domains for 2001, 2006, 2011 and 2016:
  For 2001 map click here For 2006 map click here For 2011 map click here For 2016 map click here  As part of the analysis I have inlcuded two more maps showing clusters of grids thay moved significantly up and down in the SUDI ranking.</description>
