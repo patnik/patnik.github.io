@@ -1,0 +1,369 @@
+---
+title: NBA greatest players
+author: ''
+date: '2020-10-26'
+slug: nba-greatest-players
+categories: []
+tags: []
+comments: no
+showcomments: yes
+showpagemeta: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+devtools::install_github("abresler/nbastatR")
+library("nbastatR") # note requires a bunch of other packages which are listed in the import
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+```
+
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+tab_lebron <- players_careers(players = "LeBron James")
+
+tab_giannis <- players_careers(players = "Giannis Antetokounmpo")
+
+tab_kobe <- players_careers(players = "Kobe Bryant")
+
+tab_michael <- players_careers(players = "Michael Jordan")
+
+tab_bird <- players_careers(players = "Larry Bird")
+
+tab_jabbar <- players_careers(players = "Kareem Abdul-Jabbar")
+
+
+#total_tab <- players_careers(players = c("LeBron James", "Giannis Antetokounmpo"))
+```
+
+```{r}
+#tab_lebron$nameTable
+```
+
+```{r}
+# this data is for career averages
+
+lebron_career <- rbind(as.data.frame(tab_lebron$dataTable[2]), as.data.frame(tab_lebron$dataTable[4]))
+lebron_career$player <- "LeBron James"
+lebron_career$season <- c("regular", "post")
+
+giannis_career <- rbind(as.data.frame(tab_giannis$dataTable[2]), as.data.frame(tab_giannis$dataTable[4]))
+giannis_career$player <- "Giannis Antetokounmpo"
+giannis_career$season <- c("regular", "post")
+
+kobe_career <- rbind(as.data.frame(tab_kobe$dataTable[2]), as.data.frame(tab_kobe$dataTable[4]))
+kobe_career$player <- "Kobe Bryant"
+kobe_career$season <- c("regular", "post")
+
+jordan_career <- rbind(as.data.frame(tab_michael$dataTable[2]), as.data.frame(tab_michael$dataTable[4]))
+jordan_career$player <- "Michael Jordan"
+jordan_career$season <- c("regular", "post")
+
+bird_career <- rbind(as.data.frame(tab_bird$dataTable[2]), as.data.frame(tab_bird$dataTable[4]))
+bird_career$player <- "Larry Bird"
+bird_career$season <- c("regular", "post")
+
+jabbar_career <- rbind(as.data.frame(tab_jabbar$dataTable[2]), as.data.frame(tab_jabbar$dataTable[4]))
+jabbar_career$player <- "Kareem Abdul-Jabbar"
+jabbar_career$season <- c("regular", "post")
+  
+
+# specify only the columns needed
+cols <- c("player", "season", "pctFG", "pts", "ast", "minutes", "oreb", "dreb")
+
+
+
+
+total_career <- rbind(lebron_career[,cols], giannis_career[,cols], kobe_career[,cols], jordan_career[,cols], bird_career[,cols], jabbar_career[,cols])
+
+
+# convert to long format
+total_career_long <- gather(total_career, variable, value, pctFG:dreb, factor_key=TRUE)
+
+total_career_long$variable <- as.character(total_career_long$variable)
+total_career_long$variable[total_career_long$variable == "pctFG"] <- "Field goal % (avg)"
+total_career_long$variable[total_career_long$variable == "pts"] <- "Points per game (avg)"
+total_career_long$variable[total_career_long$variable == "ast"] <- "Assists (avg)"
+total_career_long$variable[total_career_long$variable == "minutes"] <- "Minutes played (avg)"
+total_career_long$variable[total_career_long$variable == "oreb"] <- "Off rebounds (avg)"
+total_career_long$variable[total_career_long$variable == "dreb"] <- "Def rebounds (avg)"
+
+
+```
+
+
+
+
+
+
+```{r}
+# this data is by season
+lebron_regular <- as.data.frame(tab_lebron$dataTable[1])
+giannis_regular <- as.data.frame(tab_giannis$dataTable[1])
+kobe_regular <- as.data.frame(tab_kobe$dataTable[1])
+jordan_regular <- as.data.frame(tab_michael$dataTable[1])
+bird_regular <- as.data.frame(tab_bird$dataTable[1])
+jabbar_regular <- as.data.frame(tab_jabbar$dataTable[1])
+
+
+
+
+lebron_post <- as.data.frame(tab_lebron$dataTable[3])
+giannis_post <- as.data.frame(tab_giannis$dataTable[3])
+kobe_post <- as.data.frame(tab_kobe$dataTable[3])
+jordan_post <- as.data.frame(tab_michael$dataTable[3])
+bird_post <- as.data.frame(tab_bird$dataTable[3])
+jabbar_post <- as.data.frame(tab_jabbar$dataTable[3])
+
+```
+
+
+```{r}
+lebron_regular_long <- gather(lebron_regular, variable, value, gp:pts, factor_key=TRUE)
+lebron_regular_long$player <- "LeBron James"
+
+
+giannis_regular_long <- gather(giannis_regular, variable, value, gp:pts, factor_key=TRUE)
+giannis_regular_long$player <- "Giannis Antetokounmpo"
+
+
+kobe_regular_long <- gather(kobe_regular, variable, value, gp:pts, factor_key=TRUE)
+kobe_regular_long$player <- "Kobe Bryant"
+
+jordan_regular_long <- gather(jordan_regular, variable, value, gp:pts, factor_key=TRUE)
+jordan_regular_long$player <- "Michael Jordan"
+
+bird_regular_long <- gather(bird_regular, variable, value, gp:pts, factor_key=TRUE)
+bird_regular_long$player <- "Larry Bird"
+
+jabbar_regular_long <- gather(jabbar_regular, variable, value, gp:pts, factor_key=TRUE)
+jabbar_regular_long$player <- "Kareem Abdul-Jabbar"
+
+
+
+
+
+
+
+
+lebron_post_long <- gather(lebron_post, variable, value, gp:pts, factor_key=TRUE)
+lebron_post_long$player <- "LeBron James"
+
+
+giannis_post_long <- gather(giannis_post, variable, value, gp:pts, factor_key=TRUE)
+giannis_post_long$player <- "Giannis Antetokounmpo"
+
+
+kobe_post_long <- gather(kobe_post, variable, value, gp:pts, factor_key=TRUE)
+kobe_post_long$player <- "Kobe Bryant"
+
+jordan_post_long <- gather(jordan_post, variable, value, gp:pts, factor_key=TRUE)
+jordan_post_long$player <- "Michael Jordan"
+
+bird_post_long <- gather(bird_post, variable, value, gp:pts, factor_key=TRUE)
+bird_post_long$player <- "Larry Bird"
+
+jabbar_post_long <- gather(jabbar_post, variable, value, gp:pts, factor_key=TRUE)
+jabbar_post_long$player <- "Kareem Abdul-Jabbar"
+
+
+```
+
+```{r}
+
+total_regular <- rbind(lebron_regular_long, giannis_regular_long, kobe_regular_long, jordan_regular_long, bird_regular_long, jabbar_regular_long)
+
+total_post <- rbind(lebron_post_long, giannis_post_long, kobe_post_long, jordan_post_long, bird_post_long, jabbar_post_long)
+
+
+# subset variables needed
+needed <- c("pctFG", "pts", "ast", "minutes", "oreb", "dreb")
+
+total_regular <- total_regular %>% 
+  subset(variable %in% needed)
+
+
+total_post <- total_post %>% 
+  subset(variable %in% needed)
+
+```
+
+
+```{r}
+total_regular$variable <- as.character(total_regular$variable)
+total_regular$variable[total_regular$variable == "pctFG"] <- "Field goal % (avg)"
+total_regular$variable[total_regular$variable == "pts"] <- "Points per game (avg)"
+total_regular$variable[total_regular$variable == "ast"] <- "Assists (avg)"
+total_regular$variable[total_regular$variable == "minutes"] <- "Minutes played (avg)"
+total_regular$variable[total_regular$variable == "oreb"] <- "Off rebounds (avg)"
+total_regular$variable[total_regular$variable == "dreb"] <- "Def rebounds (avg)"
+
+
+total_post$variable <- as.character(total_post$variable)
+total_post$variable[total_post$variable == "pctFG"] <- "Field goal % (avg)"
+total_post$variable[total_post$variable == "pts"] <- "Points per game (avg)"
+total_post$variable[total_post$variable == "ast"] <- "Assists (avg)"
+total_post$variable[total_post$variable == "minutes"] <- "Minutes played (avg)"
+total_post$variable[total_post$variable == "oreb"] <- "Off rebounds (avg)"
+total_post$variable[total_post$variable == "dreb"] <- "Def rebounds (avg)"
+```
+
+
+
+
+
+
+
+```{r, fig.width=10, fig.height=8}
+# to be used in the order of facets
+total_career_long$variable_f = factor(total_career_long$variable, 
+                                      levels=c("Points per game (avg)", "Field goal % (avg)",
+                                               "Def rebounds (avg)", "Off rebounds (avg)",
+                                               "Assists (avg)", "Minutes played (avg)"))
+
+
+
+unique(total_career_long$variable)
+
+regular_reordered <- total_career_long %>% 
+  ungroup() %>%   # As a precaution / handle in a separate .grouped_df method
+  subset(season == "regular") %>% 
+  arrange(variable, desc(value)) %>%   # arrange by facet variables and continuous values
+  mutate(.r = row_number())
+
+
+ggplot() +
+  geom_bar(data=regular_reordered, aes(x=.r, y=value), stat = "identity") +
+  scale_x_continuous(breaks = regular_reordered$.r, labels = regular_reordered$player) +
+  facet_wrap(~ variable_f, ncol = 2, scales = "free") +
+    labs(title = "Statistics for GOATS regular season career averages", 
+         x = "", y = "") +
+  theme_minimal() +
+    theme(
+      axis.text.x=element_text(angle = 45, hjust = 1),
+      strip.text = element_text(face = 'bold', hjust = 0),
+      plot.caption = element_text(face = 'italic'),
+      panel.grid.major = element_line('white', size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE
+    )
+
+
+
+
+
+
+```
+
+```{r, fig.width=10, fig.height=8}
+
+
+post_reordered <- total_career_long %>% 
+  ungroup() %>%   # As a precaution / handle in a separate .grouped_df method
+  subset(season == "post") %>% 
+  arrange(variable, desc(value)) %>%   # arrange by facet variables and continuous values
+  mutate(.r = row_number())
+
+
+ggplot() +
+  geom_bar(data=post_reordered, aes(x=.r, y=value), stat = "identity") +
+  scale_x_continuous(breaks = post_reordered$.r, labels = post_reordered$player) +
+  facet_wrap(~ variable_f, ncol = 2, scales = "free") +
+    labs(title = "Statistics for GOATS post season career averages", 
+         x = "", y = "") +
+  theme_minimal() +
+    theme(
+      axis.text.x=element_text(angle = 45, hjust = 1),
+      strip.text = element_text(face = 'bold', hjust = 0),
+      plot.caption = element_text(face = 'italic'),
+      panel.grid.major = element_line('white', size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE
+    )
+
+
+
+
+```
+
+
+
+```{r}
+cpal =c("LeBron James" = "#377eb8",
+          "Giannis Antetokounmpo" = "#4daf4a", 
+          "Kobe Bryant" = "#984ea3", 
+          "Michael Jordan" = "#e41a1c", 
+          "Larry Bird" = "#ff7f00", 
+          "Kareem Abdul-Jabbar" = "#ffff33")
+
+
+```
+
+
+```{r, fig.width=10, fig.height=8}
+# to be used in the order of facets
+total_regular$variable_f = factor(total_regular$variable, 
+                                      levels=c("Points per game (avg)", "Field goal % (avg)",
+                                               "Def rebounds (avg)", "Off rebounds (avg)",
+                                               "Assists (avg)", "Minutes played (avg)"))
+
+ggplot(data=total_regular, aes(x = numberPlayerSeason, y = value)) + 
+  geom_line(aes(color = player), size = 1) +
+  scale_color_manual(values = cpal) +
+  theme_minimal() +
+  facet_wrap(~ variable_f, ncol = 2, scales = "free") +
+  labs(title = "Statistics for GOATS regular season", x = "Years of play", y = "", colour = "")  +
+    theme(
+      axis.text.x=element_text(angle = 0, hjust = 1),
+      strip.text = element_text(face = 'bold', hjust = 0),
+      plot.caption = element_text(face = 'italic'),
+      panel.grid.major = element_line('white', size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE,
+      legend.position="bottom"
+    )
+
+
+
+
+
+```
+
+```{r, fig.width=10, fig.height=8}
+# to be used in the order of facets
+total_post$variable_f = factor(total_post$variable, 
+                                      levels=c("Points per game (avg)", "Field goal % (avg)",
+                                               "Def rebounds (avg)", "Off rebounds (avg)",
+                                               "Assists (avg)", "Minutes played (avg)"))
+ggplot(data=total_post, aes(x = numberPlayerSeason, y = value)) + 
+  geom_line(aes(color = player), size = 1) +
+  scale_color_manual(values = cpal) +
+  theme_minimal() +
+  facet_wrap(~ variable_f, ncol = 2, scales = "free") +
+  labs(title = "Statistics for GOATS post season", x = "Years of play", y = "", colour = "") +
+      theme(
+      axis.text.x=element_text(angle = 0, hjust = 1),
+      strip.text = element_text(face = 'bold', hjust = 0),
+      plot.caption = element_text(face = 'italic'),
+      panel.grid.major = element_line('white', size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE,
+      legend.position="bottom"
+    )
+  
+```

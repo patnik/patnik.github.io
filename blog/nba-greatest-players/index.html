@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<title>
+  Nikos Patias - NBA greatest players 
+</title>
+
+<meta name="generator" content="Hugo 0.75.1" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400&family=Roboto+Slab:400,700&family=Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="en-US">
+<div class="container">
+
+
+<header class="text-left title">
+  <h1 class="title">NBA greatest players</h1>
+</header>
+<section id="category-pane" class="meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON OCT 0, 26260 
+      
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+
+
+<pre class="r"><code>devtools::install_github(&quot;abresler/nbastatR&quot;)
+library(&quot;nbastatR&quot;) # note requires a bunch of other packages which are listed in the import
+library(tidyr)
+library(ggplot2)
+library(dplyr)</code></pre>
+<pre class="r"><code>tab_lebron &lt;- players_careers(players = &quot;LeBron James&quot;)</code></pre>
+<pre><code>## Acquiring LeBron James career PerGame statistic tables
+## Acquiring LeBron James career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>tab_giannis &lt;- players_careers(players = &quot;Giannis Antetokounmpo&quot;)</code></pre>
+<pre><code>## Acquiring Giannis Antetokounmpo career PerGame statistic tables
+## Acquiring Giannis Antetokounmpo career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>tab_kobe &lt;- players_careers(players = &quot;Kobe Bryant&quot;)</code></pre>
+<pre><code>## Acquiring Kobe Bryant career PerGame statistic tables
+## Acquiring Kobe Bryant career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>tab_michael &lt;- players_careers(players = &quot;Michael Jordan&quot;)</code></pre>
+<pre><code>## Acquiring Michael Jordan career PerGame statistic tables
+## Acquiring Michael Jordan career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>tab_bird &lt;- players_careers(players = &quot;Larry Bird&quot;)</code></pre>
+<pre><code>## Acquiring Larry Bird career PerGame statistic tables
+## Acquiring Larry Bird career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>tab_jabbar &lt;- players_careers(players = &quot;Kareem Abdul-Jabbar&quot;)</code></pre>
+<pre><code>## Acquiring Kareem Abdul-Jabbar career PerGame statistic tables
+## Acquiring Kareem Abdul-Jabbar career Totals statistic tables
+## SeasonTotalsRegularSeason
+## CareerTotalsRegularSeason
+## SeasonTotalsPostSeason
+## CareerTotalsPostSeason
+## SeasonTotalsAllStarSeason
+## CareerTotalsAllStarSeason
+## SeasonRankingsRegularSeason
+## SeasonRankingsPostSeason</code></pre>
+<pre class="r"><code>#total_tab &lt;- players_careers(players = c(&quot;LeBron James&quot;, &quot;Giannis Antetokounmpo&quot;))</code></pre>
+<pre class="r"><code>#tab_lebron$nameTable</code></pre>
+<pre class="r"><code># this data is for career averages
+
+lebron_career &lt;- rbind(as.data.frame(tab_lebron$dataTable[2]), as.data.frame(tab_lebron$dataTable[4]))
+lebron_career$player &lt;- &quot;LeBron James&quot;
+lebron_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+
+giannis_career &lt;- rbind(as.data.frame(tab_giannis$dataTable[2]), as.data.frame(tab_giannis$dataTable[4]))
+giannis_career$player &lt;- &quot;Giannis Antetokounmpo&quot;
+giannis_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+
+kobe_career &lt;- rbind(as.data.frame(tab_kobe$dataTable[2]), as.data.frame(tab_kobe$dataTable[4]))
+kobe_career$player &lt;- &quot;Kobe Bryant&quot;
+kobe_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+
+jordan_career &lt;- rbind(as.data.frame(tab_michael$dataTable[2]), as.data.frame(tab_michael$dataTable[4]))
+jordan_career$player &lt;- &quot;Michael Jordan&quot;
+jordan_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+
+bird_career &lt;- rbind(as.data.frame(tab_bird$dataTable[2]), as.data.frame(tab_bird$dataTable[4]))
+bird_career$player &lt;- &quot;Larry Bird&quot;
+bird_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+
+jabbar_career &lt;- rbind(as.data.frame(tab_jabbar$dataTable[2]), as.data.frame(tab_jabbar$dataTable[4]))
+jabbar_career$player &lt;- &quot;Kareem Abdul-Jabbar&quot;
+jabbar_career$season &lt;- c(&quot;regular&quot;, &quot;post&quot;)
+  
+
+# specify only the columns needed
+cols &lt;- c(&quot;player&quot;, &quot;season&quot;, &quot;pctFG&quot;, &quot;pts&quot;, &quot;ast&quot;, &quot;minutes&quot;, &quot;oreb&quot;, &quot;dreb&quot;)
+
+
+
+
+total_career &lt;- rbind(lebron_career[,cols], giannis_career[,cols], kobe_career[,cols], jordan_career[,cols], bird_career[,cols], jabbar_career[,cols])
+
+
+# convert to long format
+total_career_long &lt;- gather(total_career, variable, value, pctFG:dreb, factor_key=TRUE)
+
+total_career_long$variable &lt;- as.character(total_career_long$variable)
+total_career_long$variable[total_career_long$variable == &quot;pctFG&quot;] &lt;- &quot;Field goal % (avg)&quot;
+total_career_long$variable[total_career_long$variable == &quot;pts&quot;] &lt;- &quot;Points per game (avg)&quot;
+total_career_long$variable[total_career_long$variable == &quot;ast&quot;] &lt;- &quot;Assists (avg)&quot;
+total_career_long$variable[total_career_long$variable == &quot;minutes&quot;] &lt;- &quot;Minutes played (avg)&quot;
+total_career_long$variable[total_career_long$variable == &quot;oreb&quot;] &lt;- &quot;Off rebounds (avg)&quot;
+total_career_long$variable[total_career_long$variable == &quot;dreb&quot;] &lt;- &quot;Def rebounds (avg)&quot;</code></pre>
+<pre class="r"><code># this data is by season
+lebron_regular &lt;- as.data.frame(tab_lebron$dataTable[1])
+giannis_regular &lt;- as.data.frame(tab_giannis$dataTable[1])
+kobe_regular &lt;- as.data.frame(tab_kobe$dataTable[1])
+jordan_regular &lt;- as.data.frame(tab_michael$dataTable[1])
+bird_regular &lt;- as.data.frame(tab_bird$dataTable[1])
+jabbar_regular &lt;- as.data.frame(tab_jabbar$dataTable[1])
+
+
+
+
+lebron_post &lt;- as.data.frame(tab_lebron$dataTable[3])
+giannis_post &lt;- as.data.frame(tab_giannis$dataTable[3])
+kobe_post &lt;- as.data.frame(tab_kobe$dataTable[3])
+jordan_post &lt;- as.data.frame(tab_michael$dataTable[3])
+bird_post &lt;- as.data.frame(tab_bird$dataTable[3])
+jabbar_post &lt;- as.data.frame(tab_jabbar$dataTable[3])</code></pre>
+<pre class="r"><code>lebron_regular_long &lt;- gather(lebron_regular, variable, value, gp:pts, factor_key=TRUE)
+lebron_regular_long$player &lt;- &quot;LeBron James&quot;
+
+
+giannis_regular_long &lt;- gather(giannis_regular, variable, value, gp:pts, factor_key=TRUE)
+giannis_regular_long$player &lt;- &quot;Giannis Antetokounmpo&quot;
+
+
+kobe_regular_long &lt;- gather(kobe_regular, variable, value, gp:pts, factor_key=TRUE)
+kobe_regular_long$player &lt;- &quot;Kobe Bryant&quot;
+
+jordan_regular_long &lt;- gather(jordan_regular, variable, value, gp:pts, factor_key=TRUE)
+jordan_regular_long$player &lt;- &quot;Michael Jordan&quot;
+
+bird_regular_long &lt;- gather(bird_regular, variable, value, gp:pts, factor_key=TRUE)
+bird_regular_long$player &lt;- &quot;Larry Bird&quot;
+
+jabbar_regular_long &lt;- gather(jabbar_regular, variable, value, gp:pts, factor_key=TRUE)
+jabbar_regular_long$player &lt;- &quot;Kareem Abdul-Jabbar&quot;
+
+
+
+
+
+
+
+
+lebron_post_long &lt;- gather(lebron_post, variable, value, gp:pts, factor_key=TRUE)
+lebron_post_long$player &lt;- &quot;LeBron James&quot;
+
+
+giannis_post_long &lt;- gather(giannis_post, variable, value, gp:pts, factor_key=TRUE)
+giannis_post_long$player &lt;- &quot;Giannis Antetokounmpo&quot;
+
+
+kobe_post_long &lt;- gather(kobe_post, variable, value, gp:pts, factor_key=TRUE)
+kobe_post_long$player &lt;- &quot;Kobe Bryant&quot;
+
+jordan_post_long &lt;- gather(jordan_post, variable, value, gp:pts, factor_key=TRUE)
+jordan_post_long$player &lt;- &quot;Michael Jordan&quot;
+
+bird_post_long &lt;- gather(bird_post, variable, value, gp:pts, factor_key=TRUE)
+bird_post_long$player &lt;- &quot;Larry Bird&quot;
+
+jabbar_post_long &lt;- gather(jabbar_post, variable, value, gp:pts, factor_key=TRUE)
+jabbar_post_long$player &lt;- &quot;Kareem Abdul-Jabbar&quot;</code></pre>
+<pre class="r"><code>total_regular &lt;- rbind(lebron_regular_long, giannis_regular_long, kobe_regular_long, jordan_regular_long, bird_regular_long, jabbar_regular_long)
+
+total_post &lt;- rbind(lebron_post_long, giannis_post_long, kobe_post_long, jordan_post_long, bird_post_long, jabbar_post_long)
+
+
+# subset variables needed
+needed &lt;- c(&quot;pctFG&quot;, &quot;pts&quot;, &quot;ast&quot;, &quot;minutes&quot;, &quot;oreb&quot;, &quot;dreb&quot;)
+
+total_regular &lt;- total_regular %&gt;% 
+  subset(variable %in% needed)
+
+
+total_post &lt;- total_post %&gt;% 
+  subset(variable %in% needed)</code></pre>
+<pre class="r"><code>total_regular$variable &lt;- as.character(total_regular$variable)
+total_regular$variable[total_regular$variable == &quot;pctFG&quot;] &lt;- &quot;Field goal % (avg)&quot;
+total_regular$variable[total_regular$variable == &quot;pts&quot;] &lt;- &quot;Points per game (avg)&quot;
+total_regular$variable[total_regular$variable == &quot;ast&quot;] &lt;- &quot;Assists (avg)&quot;
+total_regular$variable[total_regular$variable == &quot;minutes&quot;] &lt;- &quot;Minutes played (avg)&quot;
+total_regular$variable[total_regular$variable == &quot;oreb&quot;] &lt;- &quot;Off rebounds (avg)&quot;
+total_regular$variable[total_regular$variable == &quot;dreb&quot;] &lt;- &quot;Def rebounds (avg)&quot;
+
+
+total_post$variable &lt;- as.character(total_post$variable)
+total_post$variable[total_post$variable == &quot;pctFG&quot;] &lt;- &quot;Field goal % (avg)&quot;
+total_post$variable[total_post$variable == &quot;pts&quot;] &lt;- &quot;Points per game (avg)&quot;
+total_post$variable[total_post$variable == &quot;ast&quot;] &lt;- &quot;Assists (avg)&quot;
+total_post$variable[total_post$variable == &quot;minutes&quot;] &lt;- &quot;Minutes played (avg)&quot;
+total_post$variable[total_post$variable == &quot;oreb&quot;] &lt;- &quot;Off rebounds (avg)&quot;
+total_post$variable[total_post$variable == &quot;dreb&quot;] &lt;- &quot;Def rebounds (avg)&quot;</code></pre>
+<pre class="r"><code># to be used in the order of facets
+total_career_long$variable_f = factor(total_career_long$variable, 
+                                      levels=c(&quot;Points per game (avg)&quot;, &quot;Field goal % (avg)&quot;,
+                                               &quot;Def rebounds (avg)&quot;, &quot;Off rebounds (avg)&quot;,
+                                               &quot;Assists (avg)&quot;, &quot;Minutes played (avg)&quot;))
+
+
+
+unique(total_career_long$variable)</code></pre>
+<pre><code>## [1] &quot;Field goal % (avg)&quot;    &quot;Points per game (avg)&quot; &quot;Assists (avg)&quot;        
+## [4] &quot;Minutes played (avg)&quot;  &quot;Off rebounds (avg)&quot;    &quot;Def rebounds (avg)&quot;</code></pre>
+<pre class="r"><code>regular_reordered &lt;- total_career_long %&gt;% 
+  ungroup() %&gt;%   # As a precaution / handle in a separate .grouped_df method
+  subset(season == &quot;regular&quot;) %&gt;% 
+  arrange(variable, desc(value)) %&gt;%   # arrange by facet variables and continuous values
+  mutate(.r = row_number())
+
+
+ggplot() +
+  geom_bar(data=regular_reordered, aes(x=.r, y=value), stat = &quot;identity&quot;) +
+  scale_x_continuous(breaks = regular_reordered$.r, labels = regular_reordered$player) +
+  facet_wrap(~ variable_f, ncol = 2, scales = &quot;free&quot;) +
+    labs(title = &quot;Statistics for GOATS regular season career averages&quot;, 
+         x = &quot;&quot;, y = &quot;&quot;) +
+  theme_minimal() +
+    theme(
+      axis.text.x=element_text(angle = 45, hjust = 1),
+      strip.text = element_text(face = &#39;bold&#39;, hjust = 0),
+      plot.caption = element_text(face = &#39;italic&#39;),
+      panel.grid.major = element_line(&#39;white&#39;, size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE
+    )</code></pre>
+<p><img src="/Blog/2020-10-26-nba-greatest-players_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
+<pre class="r"><code>post_reordered &lt;- total_career_long %&gt;% 
+  ungroup() %&gt;%   # As a precaution / handle in a separate .grouped_df method
+  subset(season == &quot;post&quot;) %&gt;% 
+  arrange(variable, desc(value)) %&gt;%   # arrange by facet variables and continuous values
+  mutate(.r = row_number())
+
+
+ggplot() +
+  geom_bar(data=post_reordered, aes(x=.r, y=value), stat = &quot;identity&quot;) +
+  scale_x_continuous(breaks = post_reordered$.r, labels = post_reordered$player) +
+  facet_wrap(~ variable_f, ncol = 2, scales = &quot;free&quot;) +
+    labs(title = &quot;Statistics for GOATS post season career averages&quot;, 
+         x = &quot;&quot;, y = &quot;&quot;) +
+  theme_minimal() +
+    theme(
+      axis.text.x=element_text(angle = 45, hjust = 1),
+      strip.text = element_text(face = &#39;bold&#39;, hjust = 0),
+      plot.caption = element_text(face = &#39;italic&#39;),
+      panel.grid.major = element_line(&#39;white&#39;, size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE
+    )</code></pre>
+<p><img src="/Blog/2020-10-26-nba-greatest-players_files/figure-html/unnamed-chunk-10-1.png" width="960" /></p>
+<pre class="r"><code>cpal =c(&quot;LeBron James&quot; = &quot;#377eb8&quot;,
+          &quot;Giannis Antetokounmpo&quot; = &quot;#4daf4a&quot;, 
+          &quot;Kobe Bryant&quot; = &quot;#984ea3&quot;, 
+          &quot;Michael Jordan&quot; = &quot;#e41a1c&quot;, 
+          &quot;Larry Bird&quot; = &quot;#ff7f00&quot;, 
+          &quot;Kareem Abdul-Jabbar&quot; = &quot;#ffff33&quot;)</code></pre>
+<pre class="r"><code># to be used in the order of facets
+total_regular$variable_f = factor(total_regular$variable, 
+                                      levels=c(&quot;Points per game (avg)&quot;, &quot;Field goal % (avg)&quot;,
+                                               &quot;Def rebounds (avg)&quot;, &quot;Off rebounds (avg)&quot;,
+                                               &quot;Assists (avg)&quot;, &quot;Minutes played (avg)&quot;))
+
+ggplot(data=total_regular, aes(x = numberPlayerSeason, y = value)) + 
+  geom_line(aes(color = player), size = 1) +
+  scale_color_manual(values = cpal) +
+  theme_minimal() +
+  facet_wrap(~ variable_f, ncol = 2, scales = &quot;free&quot;) +
+  labs(title = &quot;Statistics for GOATS regular season&quot;, x = &quot;Years of play&quot;, y = &quot;&quot;, colour = &quot;&quot;)  +
+    theme(
+      axis.text.x=element_text(angle = 0, hjust = 1),
+      strip.text = element_text(face = &#39;bold&#39;, hjust = 0),
+      plot.caption = element_text(face = &#39;italic&#39;),
+      panel.grid.major = element_line(&#39;white&#39;, size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE,
+      legend.position=&quot;bottom&quot;
+    )</code></pre>
+<p><img src="/Blog/2020-10-26-nba-greatest-players_files/figure-html/unnamed-chunk-12-1.png" width="960" /></p>
+<pre class="r"><code># to be used in the order of facets
+total_post$variable_f = factor(total_post$variable, 
+                                      levels=c(&quot;Points per game (avg)&quot;, &quot;Field goal % (avg)&quot;,
+                                               &quot;Def rebounds (avg)&quot;, &quot;Off rebounds (avg)&quot;,
+                                               &quot;Assists (avg)&quot;, &quot;Minutes played (avg)&quot;))
+ggplot(data=total_post, aes(x = numberPlayerSeason, y = value)) + 
+  geom_line(aes(color = player), size = 1) +
+  scale_color_manual(values = cpal) +
+  theme_minimal() +
+  facet_wrap(~ variable_f, ncol = 2, scales = &quot;free&quot;) +
+  labs(title = &quot;Statistics for GOATS post season&quot;, x = &quot;Years of play&quot;, y = &quot;&quot;, colour = &quot;&quot;) +
+      theme(
+      axis.text.x=element_text(angle = 0, hjust = 1),
+      strip.text = element_text(face = &#39;bold&#39;, hjust = 0),
+      plot.caption = element_text(face = &#39;italic&#39;),
+      panel.grid.major = element_line(&#39;white&#39;, size = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.ontop = TRUE,
+      legend.position=&quot;bottom&quot;
+    )</code></pre>
+<p><img src="/Blog/2020-10-26-nba-greatest-players_files/figure-html/unnamed-chunk-13-1.png" width="960" /></p>
+
+  </div>
+</section>
+<section id="tag-pane" class="meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="menu text-center">
+  
+  
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="/">home</a></h4>
+</section>
+
+
+
+<footer class="text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2020. Nikos Patias</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.75.1</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-179598701-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+

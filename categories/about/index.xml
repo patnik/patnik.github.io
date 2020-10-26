@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about on Nikos Patias</title>
-    <link>https://patnik.github.io/categories/about/</link>
+    <link>/categories/about/</link>
     <description>Recent content in about on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/categories/about/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://patnik.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://patnik.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>I am a PhD student at the University of Liverpool. I am part of the CDT Data Analytics and Society. My PhD project is with Ordnance Survey on exploring neighbourhood change in Great Britain. My focus is primarily on socioeconomic and built environment change and how they are interacting.</description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>https://patnik.github.io/publications/</link>
+      <link>/publications/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://patnik.github.io/publications/</guid>
+      <guid>/publications/</guid>
       <description>Patias N., Rowe F., Cavazzi S. (2020) A Scalable Analytical Framework for Spatio-Temporal Analysis of Neighborhood Change: A Sequence Analysis Approach. In: Kyriakidis P., Hadjimitsis D., Skarlatos D., Mansourian A. (eds) Geospatial Technologies for Local and Regional Development. AGILE 2019. Lecture Notes in Geoinformation and Cartography. Springer, Cham. https://doi.org/10.1007/978-3-030-14745-7_13
   Rowe, F., Patias, N. and Arribas-Bel, D., 2020. Policy Brief: Neighbourhood Change and Trajectories of Inequality in Britain, 1971-2011.</description>
     </item>
     
     <item>
       <title>Sustainable Urban Development Index (SUDI)</title>
-      <link>https://patnik.github.io/sustainable-urban-development-index/</link>
+      <link>/sustainable-urban-development-index/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://patnik.github.io/sustainable-urban-development-index/</guid>
+      <guid>/sustainable-urban-development-index/</guid>
       <description>This page provides some interactive maps of my recent work on developing a Sustainable Urban Development Index for the 12 largest urban areas in Great Britain. The index has been developed at 1 km2 level.
 Using the following links you can access maps showing the ranking (split into deciles) of the Sustainable Urban Development Index and its domains for 2001, 2006, 2011 and 2016:
  For 2001 map click here For 2006 map click here For 2011 map click here For 2016 map click here  As part of the analysis I have inlcuded two more maps showing clusters of grids thay moved significantly up and down in the SUDI ranking.</description>

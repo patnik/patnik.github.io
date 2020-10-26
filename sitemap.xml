@@ -3,61 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://patnik.github.io/about/</loc>
+    <loc>/blog/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/nba-greatest-players/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/tags/about/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/categories/about/</loc>
+    <loc>/categories/about/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/</loc>
+    <loc>/tags/publications/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/tags/publications/</loc>
+    <loc>/publications/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/publications/</loc>
+    <loc>/tags/sustainable-urban-development-index/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/tags/sustainable-urban-development-index/</loc>
+    <loc>/sustainable-urban-development-index/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://patnik.github.io/sustainable-urban-development-index/</loc>
+    <loc>/tags/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://patnik.github.io/tags/</loc>
-    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://patnik.github.io/blog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://patnik.github.io/blog/extratum-package-example/</loc>
   </url>
   
 </urlset>
