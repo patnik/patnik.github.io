@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Nikos Patias</title>
-    <link>/blog/</link>
+    <link>https://patnik.github.io/blog/</link>
     <description>Recent content in Blogs on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://patnik.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>testing</title>
-      <link>/blog/testing/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <title>extRatum package example</title>
+      <link>https://patnik.github.io/blog/extratum-package-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/testing/</guid>
-      <description></description>
+      <guid>https://patnik.github.io/blog/extratum-package-example/</guid>
+      <description>This notebook provides an example of extRatum packageIn this example, I demonstrate the use of extRatum package.
+I use openly available geospatial data to calculate the area covered by water bodies in each National Park in England.
+#devtools::install(&amp;quot;C:/Users/User/Desktop/extRatum&amp;quot;)library(extRatum, quietly = TRUE)library(sf, quietly = TRUE)## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1library(dplyr, quietly = TRUE)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(tmap, quietly = TRUE)Read dataFirst, I read in the boundaries of National Parks in England, published by Natural England.</description>
     </item>
     
   </channel>

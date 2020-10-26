@@ -2,48 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nikos Patias</title>
-    <link>/</link>
+    <link>https://patnik.github.io/</link>
     <description>Recent content on Nikos Patias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://patnik.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://patnik.github.io/about/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
-      <description>I am a PhD student at the University of Liverpool. I am part of the CDT Data Analytics and Society. My PhD project is with Ordance Survey on exploring neighbourhood change in Great Britain. My focus is primarily on socioeconomic and built environment change and how they are interacting.</description>
+      <guid>https://patnik.github.io/about/</guid>
+      <description>I am a PhD student at the University of Liverpool. I am part of the CDT Data Analytics and Society. My PhD project is with Ordnance Survey on exploring neighbourhood change in Great Britain. My focus is primarily on socioeconomic and built environment change and how they are interacting.</description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>/publications/</link>
+      <link>https://patnik.github.io/publications/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/publications/</guid>
+      <guid>https://patnik.github.io/publications/</guid>
       <description>Patias N., Rowe F., Cavazzi S. (2020) A Scalable Analytical Framework for Spatio-Temporal Analysis of Neighborhood Change: A Sequence Analysis Approach. In: Kyriakidis P., Hadjimitsis D., Skarlatos D., Mansourian A. (eds) Geospatial Technologies for Local and Regional Development. AGILE 2019. Lecture Notes in Geoinformation and Cartography. Springer, Cham. https://doi.org/10.1007/978-3-030-14745-7_13
   Rowe, F., Patias, N. and Arribas-Bel, D., 2020. Policy Brief: Neighbourhood Change and Trajectories of Inequality in Britain, 1971-2011.</description>
     </item>
     
     <item>
       <title>Sustainable Urban Development Index (SUDI)</title>
-      <link>/sustainable-urban-development-index/</link>
+      <link>https://patnik.github.io/sustainable-urban-development-index/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/sustainable-urban-development-index/</guid>
+      <guid>https://patnik.github.io/sustainable-urban-development-index/</guid>
       <description>This page provides some interactive maps of my recent work on developing a Sustainable Urban Development Index for the 12 largest urban areas in Great Britain. The index has been developed at 1 km2 level.
 Using the following links you can access maps showing the ranking (split into deciles) of the Sustainable Urban Development Index and its domains for 2001, 2006, 2011 and 2016:
  For 2001 map click here For 2006 map click here For 2011 map click here For 2016 map click here  As part of the analysis I have inlcuded two more maps showing clusters of grids thay moved significantly up and down in the SUDI ranking.</description>
     </item>
     
     <item>
-      <title>testing</title>
-      <link>/blog/testing/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <title>extRatum package example</title>
+      <link>https://patnik.github.io/blog/extratum-package-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/testing/</guid>
-      <description></description>
+      <guid>https://patnik.github.io/blog/extratum-package-example/</guid>
+      <description>This notebook provides an example of extRatum packageIn this example, I demonstrate the use of extRatum package.
+I use openly available geospatial data to calculate the area covered by water bodies in each National Park in England.
+#devtools::install(&amp;quot;C:/Users/User/Desktop/extRatum&amp;quot;)library(extRatum, quietly = TRUE)library(sf, quietly = TRUE)## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1library(dplyr, quietly = TRUE)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(tmap, quietly = TRUE)Read dataFirst, I read in the boundaries of National Parks in England, published by Natural England.</description>
     </item>
     
   </channel>
